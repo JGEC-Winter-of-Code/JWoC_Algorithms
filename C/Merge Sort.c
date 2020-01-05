@@ -68,8 +68,12 @@ void printArray(int A[], int size)
 } 
 int main() 
 { 
-    int arr[] = {12, 11, 13, 5, 6, 7}; 
-    int size = sizeof(arr)/sizeof(arr[0]); 
+    int size;
+    scanf("%d"&size);
+    
+    int arr[size];
+    for (int i=0;i<size;i++)
+         scanf("%d"&arr[i]);
   
     mergeSort(arr, 0, size - 1); 
   
