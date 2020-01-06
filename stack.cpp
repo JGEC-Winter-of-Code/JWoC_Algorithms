@@ -107,9 +107,9 @@ string infixToPrefix(string infix)
 // Driver code 
 int main() 
 { 
-  cout<<"Enter a expression to cpnvert from infix to prefix:";
+  cout<<"Enter a expression to convert from infix to prefix:";
 	string s;
   cin>>s;
-	cout << infixToPrefix(s) << std::endl; 
+	cout << "The prefix expression is:" << infixToPrefix(s) << std::endl; 
 	return 0; 
 } 
