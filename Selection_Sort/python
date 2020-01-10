@@ -1,0 +1,31 @@
+import sys 
+print("These programs sorts array using SELECTION SORT\n")
+print("Time complexity in best case as well as in worst case is O(n^2) \n")
+print("Do you want to take array as input :-\n ")
+print("press - 1 (for YES) else press any no. : ")
+x = int(input())
+if x==1:
+    print("Enter array")
+    A = [int(x) for x in input().split()]
+else :
+    A = [23 , 54 , 76 , 98 , 102 , 12 , 37]
+
+  
+# Traverse through all array elements 
+for i in range(len(A)): 
+      
+    # Find the minimum element in remaining  
+    # unsorted array 
+    min_idx = i 
+    for j in range(i+1, len(A)): 
+        if A[min_idx] > A[j]: 
+            min_idx = j 
+              
+    # Swap the found minimum element with  
+    # the first element         
+    A[i], A[min_idx] = A[min_idx], A[i] 
+  
+# Driver code to test above 
+print ("Sorted array (in ascending order) :-") 
+for i in range(len(A)): 
+    print("%d" %A[i],end = " ") 
