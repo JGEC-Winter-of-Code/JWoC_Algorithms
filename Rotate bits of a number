@@ -1,0 +1,54 @@
+## Bit Rotation: A rotation (or circular shift) is an operation similar to shift except that
+## the bits that fall off at one end are put back to the other end.
+
+## In left rotation, the bits that fall off at left end are put back at right end.
+
+## In right rotation, the bits that fall off at right end are put back at left end.
+
+
+
+# Python3 code to 
+# rotate bits of number 
+
+INT_BITS = 32
+
+# Function to left 
+# rotate n by d bits 
+def leftRotate(n, d): 
+
+	# In n<<d, last d bits are 0. 
+	# To put first 3 bits of n at 
+	# last, do bitwise or of n<<d 
+	# with n >>(INT_BITS - d) 
+	return (n << d)|(n >> (INT_BITS - d)) 
+
+# Function to right 
+# rotate n by d bits 
+def rightRotate(n, d): 
+
+	# In n>>d, first d bits are 0. 
+	# To put last 3 bits of at 
+	# first, do bitwise or of n>>d 
+	# with n <<(INT_BITS - d) 
+	return (n >> d)|(n << (INT_BITS - d)) & 0xFFFFFFFF
+
+# Driver program to 
+# test above functions 
+n = 16
+d = 2
+
+print("Left Rotation of",n,"by"
+	,d,"is",end=" ") 
+print(leftRotate(n, d)) 
+
+print("Right Rotation of",n,"by"
+	,d,"is",end=" ") 
+print(rightRotate(n, d)) 
+
+# This code is contributed by Saurav Lal 
+
+
+##    Output :
+##    Left Rotation of 16 by 2 is 64
+##    Right Rotation of 16 by 2 is 4
+
