@@ -1,0 +1,46 @@
+##  Write code to find lexicographic minimum in a circular array, e.g. for the array BCABDADAB, the lexicographic minimum is ABBCABDAD.##
+
+
+# A simple Python3 program to find lexicographically 
+# minimum rotation of a given string 
+
+# This function return lexicographically minimum 
+# rotation of str 
+def minLexRotation(str_) : 
+
+	# Find length of given string 
+	n = len(str_) 
+
+	# Create an array of strings to store all rotations 
+	arr = [0] * n 
+
+	# Create a concatenation of string with itself 
+	concat = str_ + str_ 
+
+	# One by one store all rotations of str in array. 
+	# A rotation is obtained by getting a substring of concat 
+	for i in range(n) : 
+		arr[i] = concat[i : n + i] 
+
+	# Sort all rotations 
+	arr.sort() 
+
+	# Return the first rotation from the sorted array 
+	return arr[0] 
+
+# Driver Code 
+print(minLexRotation("GEEKSFORGEEKS")) 
+print(minLexRotation("GEEKSQUIZ")) 
+print(minLexRotation("BCABDADAB")) 
+
+# This code is contributed by Saurav lal
+
+
+Input:  GEEKSQUIZ
+Output: EEKSQUIZG
+
+Input:  GFG
+Output: FGG
+
+Input:  GEEKSFORGEEKS
+Output: EEKSFORGEEKSG
