@@ -45,7 +45,7 @@ int main()
 {
     string tar;
     string pat;
-    cin<<tar<<pat;
+    cin>>tar>>pat;
     if (zAlgorithm(pat, tar))
         cout<<"'"<<pat<<"' found in string '"<<tar<<"'"<<endl;
     else
